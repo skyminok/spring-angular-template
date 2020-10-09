@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'org.springframework.boot' version '2.3.2.RELEASE'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+description 'Main artifact'
+
+dependencies {
+    // project modules
+    runtimeOnly project(':frontend')
+    implementation project(':backend:base')
+}
+
+bootJar {
+    mainClassName 'app.WebProjectApplication'
+    archiveFileName = 'app.jar'
+}
+
+bootRun {
+    main 'app.WebProjectApplication'
+    systemProperty('testMode', 'true')
+    systemProperty('spring.profiles.active', 'h2')
+}

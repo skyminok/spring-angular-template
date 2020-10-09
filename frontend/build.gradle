@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id "com.github.node-gradle.node" version "2.2.4"
+    id 'idea'
+}
+
+node {
+    version = '14.13.0'
+    npmVersion = '6.14.8'
+    download = true
+}
+
+jar {
+    dependsOn 'npm_run_build'
+}
+
+test {
+    dependsOn npm_run_test
+}
+
+check {
+    dependsOn npm_run_lint
+}
+
+task start {
+    dependsOn npm_run_start
+}
+
+idea {
+    module {
+        sourceDirs += file('build/resources/main')
+    }
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.12/lombok-1.18.12.jar" />
+        </processorPath>
+        <module name="web-project.backend.features.user-lib.main" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="app" target="1.5" />
+      <module name="web-project.app-backend.main" target="14" />
+      <module name="web-project.app-backend.test" target="14" />
+      <module name="web-project.backend.commons.main" target="14" />
+      <module name="web-project.backend.commons.test" target="14" />
+      <module name="web-project.backend.features.main" target="14" />
+      <module name="web-project.backend.features.test" target="14" />
+      <module name="web-project.backend.main" target="14" />
+      <module name="web-project.backend.test" target="14" />
+      <module name="web-project.commons.common-rest" target="14" />
+      <module name="web-project.commons.common-rest.main" target="14" />
+      <module name="web-project.commons.common-rest.test" target="14" />
+      <module name="web-project.commons.main" target="14" />
+      <module name="web-project.commons.model" target="14" />
+      <module name="web-project.commons.model.main" target="14" />
+      <module name="web-project.commons.model.test" target="14" />
+      <module name="web-project.commons.test" target="14" />
+      <module name="web-project.core.main" target="14" />
+      <module name="web-project.core.test" target="14" />
+      <module name="web-project.features.main" target="14" />
+      <module name="web-project.features.test" target="14" />
+      <module name="web-project.features.user-lib" target="14" />
+      <module name="web-project.features.user-lib.main" target="14" />
+      <module name="web-project.features.user-lib.test" target="14" />
+      <module name="web-project.main" target="14" />
+      <module name="web-project.test" target="14" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

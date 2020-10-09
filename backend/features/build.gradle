@@ -1,0 +1,10 @@
+
+subprojects {
+    dependencies {
+        api project(':core:core-service-api')
+    }
+
+    tasks.withType(Test) {
+        maxParallelForks = Runtime.runtime.availableProcessors()
+    }
+}
