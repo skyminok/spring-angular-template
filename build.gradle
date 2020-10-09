@@ -1,0 +1,17 @@
+ext {
+    appVersion = '0.1-SNAPSHOT'
+}
+
+subprojects {
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    configurations.all {
+        resolutionStrategy {
+            failOnVersionConflict()
+        }
+    }
+}
