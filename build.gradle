@@ -3,6 +3,7 @@ ext {
 }
 
 subprojects {
+
     repositories {
         mavenLocal()
         mavenCentral()
