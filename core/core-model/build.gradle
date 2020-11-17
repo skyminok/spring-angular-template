@@ -1,5 +1,3 @@
 dependencies {
-    api project(':core:core-model')
-
     annotationProcessor 'org.hibernate:hibernate-jpamodelgen:5.4.23.Final'
 }

@@ -2,12 +2,14 @@ package app;
 
 import lombok.Builder;
 import lombok.Getter;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Lazy
 @RestController
 @PropertySource("classpath:version.properties")
 public class ApiResource {

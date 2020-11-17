@@ -17,6 +17,12 @@
             <column name="id" type="uuid">
                 <constraints primaryKey="true" primaryKeyName="pk_users"/>
             </column>
+            <column name="created_at" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_at" type="datetime">
+                <constraints nullable="false"/>
+            </column>
             <column name="username" type="varchar(256)" remarks="User login">
                 <constraints nullable="false" unique="true" uniqueConstraintName="uq_users"/>
             </column>

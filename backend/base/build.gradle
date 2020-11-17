@@ -7,6 +7,7 @@ dependencies {
     runtimeOnly project(':core:core-service')
     runtimeOnly project(':backend:features:user-lib')
     api project(':backend:commons:common-rest')
+    api project(':backend:commons:model')
 
     // utils
     runtimeOnly 'org.codehaus.janino:janino'

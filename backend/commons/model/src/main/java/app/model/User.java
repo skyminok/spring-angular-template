@@ -2,14 +2,27 @@ package app.model;
 
 import core.model.EntityBaseUUID;
 import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "users", schema = "staff")
 @Getter
+@Setter
+@ToString(of = "username", callSuper = true)
 public class User extends EntityBaseUUID {
     private static final long serialVersionUID = 3510710692742567314L;
 
+    @Column(name = "username")
+    private String username;
+
+    @Column(name = "password_encoded")
+    private String passwordEncoded;
+
+    @Column(name = "password_salt")
+    private String passwordSalt;
 }

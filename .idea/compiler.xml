@@ -8,10 +8,38 @@
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.12/lombok-1.18.12.jar" />
         </processorPath>
+        <module name="web-project.core.core-service.test" />
         <module name="web-project.backend.features.user-lib.main" />
+        <module name="web-project.backend.commons.common-rest.test" />
+        <module name="web-project.core.core-model.test" />
+        <module name="web-project.core.core-service.main" />
+        <module name="web-project.core.core-service-api.main" />
+        <module name="web-project.backend.base.main" />
+        <module name="web-project.backend.features.user-lib.test" />
+        <module name="web-project.backend.commons.common-rest.main" />
+        <module name="web-project.backend.commons.model.test" />
+        <module name="web-project.core.core-service-api.test" />
+        <module name="web-project.backend.base.test" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.12/lombok-1.18.12.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.hibernate/hibernate-jpamodelgen/5.4.23.Final/3e647cb924562f25d230bd783dedee6f6c8430cc/hibernate-jpamodelgen-5.4.23.Final.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/jboss/logging/jboss-logging/3.4.1.Final/jboss-logging-3.4.1.Final.jar" />
+          <entry name="$MAVEN_REPOSITORY$/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/jaxb-runtime/2.3.3/c46b68a6e3a2d84ba4eb14c6a8a1a9a7be4048bc/jaxb-runtime-2.3.3.jar" />
+          <entry name="$MAVEN_REPOSITORY$/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar" />
+          <entry name="$MAVEN_REPOSITORY$/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jaxb/txw2/2.3.3/12f70b0ea4fc1ad45315e842f63f7c9a46f46530/txw2-2.3.3.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.sun.istack/istack-commons-runtime/3.0.11/4293b5f4e4e89d598f62bb2ba73b32132e7c3a27/istack-commons-runtime-3.0.11.jar" />
+          <entry name="$MAVEN_REPOSITORY$/com/sun/activation/jakarta.activation/1.2.2/jakarta.activation-1.2.2.jar" />
+        </processorPath>
+        <module name="web-project.core.core-model.main" />
+        <module name="web-project.backend.commons.model.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="14">
       <module name="app" target="1.5" />
       <module name="web-project.app-backend.main" target="14" />
       <module name="web-project.app-backend.test" target="14" />
