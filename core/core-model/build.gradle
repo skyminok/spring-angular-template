@@ -1,3 +1,5 @@
 dependencies {
+    compileOnly 'javax.persistence:javax.persistence-api:2.2'
+
     annotationProcessor 'org.hibernate:hibernate-jpamodelgen:5.4.23.Final'
 }

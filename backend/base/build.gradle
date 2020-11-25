@@ -1,13 +1,10 @@
-plugins {
-    id "com.palantir.git-version" version "0.12.3"
-}
-
 dependencies {
     // project modules
     runtimeOnly project(':core:core-service')
     runtimeOnly project(':backend:features:user-lib')
     api project(':backend:commons:common-rest')
     api project(':backend:commons:model')
+    api project(':backend:db')
 
     // utils
     runtimeOnly 'org.codehaus.janino:janino'
@@ -21,13 +18,11 @@ dependencies {
 
 processResources {
     filesMatching('**version.properties') {
-        //noinspection GroovyAssignabilityCheck
-        def details = versionDetails()
         expand(
-                'projectVersion': "${project.version}",
-                'gitHashFull': details.gitHashFull,
-                'gitHash': details.gitHash,
-                'gitBranch': details.branchName,
+                'projectVersion': "0.1-SNAPSHOT",
+                'gitHashFull': '7f0d1523-186a-488d-b5b0-ae292842eadc',
+                'gitHash': '8413701a-2933-43f6-997c-5756d9d7aba2',
+                'gitBranch': 'master',
         )
     }
 }

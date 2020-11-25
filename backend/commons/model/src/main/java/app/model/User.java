@@ -8,13 +8,15 @@ import lombok.ToString;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serial;
 
 @Entity
-@Table(name = "users", schema = "staff")
+@Table(name = "users")
 @Getter
 @Setter
 @ToString(of = "username", callSuper = true)
 public class User extends EntityBaseUUID {
+    @Serial
     private static final long serialVersionUID = 3510710692742567314L;
 
     @Column(name = "username")

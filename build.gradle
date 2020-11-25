@@ -7,9 +7,6 @@ ext {
 }
 
 subprojects {
-    apply plugin: 'pmd'
-    apply plugin: 'com.github.spotbugs'
-
     repositories {
         mavenLocal()
         mavenCentral()
@@ -20,54 +17,10 @@ subprojects {
             failOnVersionConflict()
         }
     }
-
-    spotbugs {
-        excludeFilter.set(file("${rootProject.projectDir}/spotbugs-filter.xml"))
-    }
 }
 
-
-import java.util.concurrent.TimeUnit
-
-// Log timings per task.
-class TimingsListener implements TaskExecutionListener, BuildListener {
-    private long startTime
-    private timings = [] as LinkedList
-
-    @Override
-    void beforeExecute(Task task) {
-        startTime = System.nanoTime()
+allprojects {
+    wrapper {
+        distributionUrl = 'https://services.gradle.org/distributions/gradle-6.8.1-all.zip'
     }
-
-    @Override
-    void afterExecute(Task task, TaskState taskState) {
-        def ms = TimeUnit.MILLISECONDS.convert(System.nanoTime() - startTime, TimeUnit.NANOSECONDS)
-        timings.add([ms, task.path])
-        task.project.logger.warn "${task.path} took ${ms}ms"
-    }
-
-    @Override
-    void buildFinished(BuildResult result) {
-        println "\nTask timings:"
-        for (timing in timings) {
-            //noinspection GroovyAssignabilityCheck
-            if (timing[0] >= 250) {
-                printf "%7sms  %s\n", timing
-            }
-        }
-    }
-
-    @Override
-    void buildStarted(Gradle gradle) {}
-
-    @Override
-    void projectsEvaluated(Gradle gradle) {}
-
-    @Override
-    void projectsLoaded(Gradle gradle) {}
-
-    @Override
-    void settingsEvaluated(Settings settings) {}
 }
-
-gradle.addListener new TimingsListener()

@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HealthResource {
 
-    @GetMapping(path = "/health", produces = MediaType.TEXT_PLAIN_VALUE)
+    private static final String OK_RESPONSE = "OK";
+
+    @GetMapping(path = {"/health", AppPath.API_PATH + "/health"}, produces = MediaType.TEXT_PLAIN_VALUE)
     public String health() {
         log.trace("Health check");
-        return "OK";
+        return OK_RESPONSE;
     }
 }

@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<databaseChangeLog
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   logicalFilePath="main/0.0"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <changeSet id="tag-0" author="skyminok79">
-        <tagDatabase tag="empty"/>
+    <changeSet id="000" author="skyminok79">
+        <tagDatabase tag="000"/>
     </changeSet>
 
-    <changeSet id="0000" author="skyminok79">
-        <sql><![CDATA[create schema staff]]></sql>
-    </changeSet>
-
-    <changeSet id="0002" author="skyminok79">
-        <createTable tableName="users" schemaName="staff">
+    <changeSet id="0001" author="skyminok79">
+        <createTable tableName="users">
             <column name="id" type="uuid">
                 <constraints primaryKey="true" primaryKeyName="pk_users"/>
             </column>

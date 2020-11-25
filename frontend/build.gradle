@@ -5,29 +5,78 @@ plugins {
 }
 
 node {
-    version = '14.13.0'
-    npmVersion = '6.14.8'
+    version = '14.15.4'
     download = true
-}
-
-jar {
-    dependsOn 'npm_run_build'
-}
-
-test {
-    dependsOn npm_run_test
-}
-
-check {
-    dependsOn npm_run_lint
-}
-
-task start {
-    dependsOn npm_run_start
 }
 
 idea {
     module {
         sourceDirs += file('build/resources/main')
+    }
+}
+
+task cachedBuildDev(type: CacheableNpmRunTask) {
+    scripts = 'buildDev'
+    dependsOn npmInstall
+}
+
+task cachedTest(type: CacheableNpmRunTask) {
+    scripts = 'test'
+    dependsOn cachedBuildDev
+}
+
+task cachedLint(type: CacheableNpmRunTask) {
+    scripts = 'lint'
+    dependsOn cachedBuildDev
+}
+
+boolean isProdTarget() {
+    return project.hasProperty('target') && project.property('target') == 'prod'
+}
+
+jar {
+    if (isProdTarget()) {
+        dependsOn npm_run_build
+    } else {
+        dependsOn cachedBuildDev
+    }
+}
+
+test {
+    if (isProdTarget()) {
+        dependsOn npm_run_test
+    } else {
+        dependsOn cachedTest
+    }
+}
+
+check {
+    if (isProdTarget()) {
+        dependsOn npm_run_lint
+    } else {
+        dependsOn cachedLint
+    }
+}
+
+import com.moowork.gradle.node.npm.NpmTask
+
+@CacheableTask
+class CacheableNpmRunTask extends NpmTask {
+    @Input
+    String scripts
+
+    @PathSensitive(value = PathSensitivity.ABSOLUTE)
+    @InputFiles
+    FileCollection sourceFiles = project.files('build.gradle', 'src', 'package.json', 'angular.json', 'e2e',
+            'karma.conf.js', 'tsconfig.app.json', 'tsconfig.json', 'tsconfig.spec.json', 'tslint.json')
+
+    @OutputDirectory
+    File outputDir = project.file("build")
+
+    @Override
+    void exec() {
+        this.npmCommand = ['run', scripts]
+        this.runner.workingDir= project.file('node_modules')
+        super.exec()
     }
 }

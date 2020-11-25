@@ -1,0 +1,57 @@
+plugins {
+    id 'java'
+    id 'org.liquibase.gradle' version '2.0.4'
+    id 'maven-publish'
+}
+
+configurations.all {
+    resolutionStrategy {
+        force 'org.slf4j:slf4j-api:1.7.28'
+    }
+}
+
+dependencies {
+    liquibaseRuntime "org.liquibase:liquibase-core:${versionLiquibase}"
+    liquibaseRuntime 'com.h2database:h2:1.4.200'
+}
+
+liquibase {
+    activities {
+        //noinspection GroovyAssignabilityCheck
+        main {
+            changeLogFile "${project.projectDir}/src/main/resources/db-migration/changelog-master.xml"
+            url "jdbc:h2:file:${project.buildDir}/db/main"
+            username 'sa'
+            logLevel 'warn'
+            contexts 'demo'
+        }
+    }
+}
+
+task dbZip(dependsOn: update, type: Zip) {
+    from "${project.buildDir}/db" include '*.mv.db'
+    archiveFileName = 'testData.zip'
+}
+
+build.dependsOn dbZip
+
+
+/*
+def testDbArtifact = artifacts.add('default', dbZip) {
+    name = 'testDb'
+    version = '0.1'
+}
+
+apply plugin: 'maven-publish'
+publishing {
+    repositories {
+        maven { url = "file://${System.getProperty('java.io.tmpdir')}/my-repo" }
+    }
+    publications {
+        myPub(MavenPublication) {
+            artifactId testDbArtifact.name
+            artifact testDbArtifact
+        }
+    }
+}
+*/

@@ -1,5 +1,6 @@
 package app;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,6 +13,7 @@ import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@Slf4j
 @Transactional
 public class EntityMappingTest extends BaseBackendTest {
 
@@ -23,9 +25,9 @@ public class EntityMappingTest extends BaseBackendTest {
         Metamodel metamodel = em.getMetamodel();
         Set<EntityType<?>> entities = metamodel.getEntities();
         for (EntityType<?> entity : entities) {
+            log.info("Testing entity: {}", entity.getName());
             String query = String.format("select e from %s e where 1 = 0", entity.getName());
             List<?> list = em.createQuery(query, entity.getJavaType())
-                    .setMaxResults(0)
                     .getResultList();
             assertTrue(list.isEmpty());
         }

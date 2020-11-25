@@ -1,5 +1,6 @@
 pluginManagement {
     repositories {
+        mavenCentral()
         gradlePluginPortal()
     }
 }
@@ -26,7 +27,11 @@ include 'backend:base'
 include 'backend:commons'
 include 'backend:commons:model'
 include 'backend:commons:common-rest'
+include 'backend:commons:common-test'
 
 // features
 include 'backend:features'
 include 'backend:features:user-lib'
+
+// database changelog
+include 'backend:db'

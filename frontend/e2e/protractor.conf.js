@@ -4,7 +4,7 @@
 
 const {SpecReporter} = require('jasmine-spec-reporter');
 
-// noinspection JSClosureCompilerSyntax,JSUnusedGlobalSymbols
+// noinspection JSClosureCompilerSyntax,JSUnusedGlobalSymbols,JSValidateTypes
 /**
  * @type { import("protractor").Config }
  */
