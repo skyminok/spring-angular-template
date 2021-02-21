@@ -1,5 +1,5 @@
 plugins {
-    id "com.github.spotbugs" version "4.5.1"
+    id "com.github.spotbugs" version "4.6.1"
 }
 
 ext {
@@ -21,6 +21,6 @@ subprojects {
 
 allprojects {
     wrapper {
-        distributionUrl = 'https://services.gradle.org/distributions/gradle-6.8.1-all.zip'
+        distributionUrl = 'https://services.gradle.org/distributions/gradle-6.8.2-all.zip'
     }
 }

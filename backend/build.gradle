@@ -27,7 +27,7 @@ subprojects { subproject ->
         }
 
         ext {
-            springBootVersion = '2.4.2'
+            springBootVersion = '2.4.3'
         }
 
         dependencyManagement {
@@ -37,10 +37,6 @@ subprojects { subproject ->
         }
 
         dependencies {
-            // Spring Framework
-            implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-            implementation 'org.springframework.boot:spring-boot-starter-web'
-
             // utils
             annotationProcessor 'org.projectlombok:lombok'
             compileOnly 'org.projectlombok:lombok'
@@ -52,7 +48,8 @@ subprojects { subproject ->
             testAnnotationProcessor 'org.projectlombok:lombok'
             testCompileOnly 'org.projectlombok:lombok'
 
-            compileOnly 'com.google.code.findbugs:jsr305:3.0.2'
+//            compileOnly 'com.google.code.findbugs:jsr305:3.0.2'
+            compileOnly "com.github.spotbugs:spotbugs-annotations:${spotbugs.toolVersion.get()}"
         }
 
         tasks.withType(JavaCompile) {
@@ -139,6 +136,7 @@ subprojects { subproject ->
         }
 
         spotbugs {
+            showStackTraces = true
             excludeFilter.set(file("${rootProject.projectDir}/spotbugs-filter.xml"))
         }
 
