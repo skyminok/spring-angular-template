@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-    id 'org.springframework.boot' version '2.4.2'
+    id 'org.springframework.boot' version '2.5.3'
 }
 
 group = 'com.example'
@@ -35,10 +35,3 @@ bootRun {
     dependsOn assemble
 }
 
-task bootRunLocalPostgres {
-    group = 'application'
-    bootRun.configure {
-        systemProperty 'spring.profiles.active', 'postgres'
-    }
-    finalizedBy bootRun
-}

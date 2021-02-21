@@ -26,6 +26,10 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run once `npx webdriver-manager update --versions.chrome=<your_local_Chrome_version>`
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
+Setup environment variable
+
+`CHROME_BIN=<path_to_chrome_executable>`
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out

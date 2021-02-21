@@ -1,10 +1,14 @@
+def featureModules = rootProject.subprojects.find { p -> p.name == 'features' }.subprojects
+
 dependencies {
     // project modules
+    runtimeOnly project(':backend:db')
+    implementation project(':backend:commons:model')
     runtimeOnly project(':core:core-service')
-    runtimeOnly project(':backend:features:user-lib')
-    api project(':backend:commons:common-rest')
-    api project(':backend:commons:model')
-    api project(':backend:db')
+    implementation project(':backend:commons:common-rest')
+
+    // all feature modulesare included automatically
+    implementation featureModules
 
     // Spring Framework
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -13,9 +17,9 @@ dependencies {
 
     // utils
     runtimeOnly 'org.codehaus.janino:janino'
-    runtimeOnly 'org.liquibase:liquibase-core'
+    runtimeOnly "org.liquibase:liquibase-core:${versionLiquibase}"
     runtimeOnly 'com.h2database:h2'
-    runtimeOnly 'org.postgresql:postgresql:42.2.14'
+    runtimeOnly 'org.postgresql:postgresql'
 
     // devtools
     compileOnly 'org.springframework.boot:spring-boot-devtools'

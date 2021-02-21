@@ -63,7 +63,6 @@
                             "optimization": false,
                             "aot": false,
                             "sourceMap": true,
-                            "extractCss": false,
                             "namedChunks": false,
                             "extractLicenses": false,
                             "buildOptimizer": false,
@@ -94,8 +93,7 @@
                         },
                         "hmr": {
                             "browserTarget": "ng-template:build:hmr",
-                            "hmr": true,
-                            "hmrWarning": false
+                            "hmr": true
                         }
                     }
                 },
@@ -123,15 +121,11 @@
                     }
                 },
                 "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
+                    "builder": "@angular-eslint/builder:lint",
                     "options": {
-                        "tsConfig": [
-                            "tsconfig.app.json",
-                            "tsconfig.spec.json",
-                            "e2e/tsconfig.json"
-                        ],
-                        "exclude": [
-                            "**/node_modules/**"
+                        "lintFilePatterns": [
+                            "src/**/*.ts",
+                            "src/**/*.html"
                         ]
                     }
                 },

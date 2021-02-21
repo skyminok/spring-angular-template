@@ -21,6 +21,6 @@ subprojects {
 
 allprojects {
     wrapper {
-        distributionUrl = 'https://services.gradle.org/distributions/gradle-6.8.2-all.zip'
+        distributionUrl = 'https://services.gradle.org/distributions/gradle-7.2-all.zip'
     }
 }

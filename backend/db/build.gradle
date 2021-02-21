@@ -4,7 +4,7 @@ plugins {
     id 'maven-publish'
 }
 
-configurations.all {
+configurations.getByName('liquibaseRuntime') {
     resolutionStrategy {
         force 'org.slf4j:slf4j-api:1.7.28'
     }

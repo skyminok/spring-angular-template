@@ -23,3 +23,14 @@ These additional references should also help you:
 
 * [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
 
+### Assemble project
+
+Dev version: ./gradlew assemble
+
+Prod version: ./gradlew assemble -Ptarget=prod
+
+### Full build
+
+Dev version: ./gradlew build
+
+Prod version: ./gradlew build -Ptarget=prod

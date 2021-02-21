@@ -27,7 +27,7 @@ subprojects { subproject ->
         }
 
         ext {
-            springBootVersion = '2.4.3'
+            springBootVersion = '2.5.3'
         }
 
         dependencyManagement {
@@ -48,7 +48,6 @@ subprojects { subproject ->
             testAnnotationProcessor 'org.projectlombok:lombok'
             testCompileOnly 'org.projectlombok:lombok'
 
-//            compileOnly 'com.google.code.findbugs:jsr305:3.0.2'
             compileOnly "com.github.spotbugs:spotbugs-annotations:${spotbugs.toolVersion.get()}"
         }
 
