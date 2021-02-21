@@ -1,11 +1,11 @@
 plugins {
     id 'java'
-    id "com.github.node-gradle.node" version "2.2.4"
+    id "com.github.node-gradle.node" version "3.0.1"
     id 'idea'
 }
 
 node {
-    version = '14.15.4'
+    version = '14.17.6'
     download = true
 }
 
@@ -15,68 +15,23 @@ idea {
     }
 }
 
-task cachedBuildDev(type: CacheableNpmRunTask) {
-    scripts = 'buildDev'
-    dependsOn npmInstall
-}
-
-task cachedTest(type: CacheableNpmRunTask) {
-    scripts = 'test'
-    dependsOn cachedBuildDev
-}
-
-task cachedLint(type: CacheableNpmRunTask) {
-    scripts = 'lint'
-    dependsOn cachedBuildDev
-}
-
 boolean isProdTarget() {
     return project.hasProperty('target') && project.property('target') == 'prod'
 }
 
 jar {
+    dependsOn npmInstall
     if (isProdTarget()) {
         dependsOn npm_run_build
     } else {
-        dependsOn cachedBuildDev
+        dependsOn npm_run_buildDev
     }
 }
 
 test {
-    if (isProdTarget()) {
-        dependsOn npm_run_test
-    } else {
-        dependsOn cachedTest
-    }
+    dependsOn npm_run_test
 }
 
 check {
-    if (isProdTarget()) {
-        dependsOn npm_run_lint
-    } else {
-        dependsOn cachedLint
-    }
-}
-
-import com.moowork.gradle.node.npm.NpmTask
-
-@CacheableTask
-class CacheableNpmRunTask extends NpmTask {
-    @Input
-    String scripts
-
-    @PathSensitive(value = PathSensitivity.ABSOLUTE)
-    @InputFiles
-    FileCollection sourceFiles = project.files('build.gradle', 'src', 'package.json', 'angular.json', 'e2e',
-            'karma.conf.js', 'tsconfig.app.json', 'tsconfig.json', 'tsconfig.spec.json', 'tslint.json')
-
-    @OutputDirectory
-    File outputDir = project.file("build")
-
-    @Override
-    void exec() {
-        this.npmCommand = ['run', scripts]
-        this.runner.workingDir= project.file('node_modules')
-        super.exec()
-    }
+    dependsOn npm_run_lint
 }

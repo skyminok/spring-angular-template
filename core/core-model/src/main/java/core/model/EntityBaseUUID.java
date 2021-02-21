@@ -18,7 +18,7 @@ public abstract class EntityBaseUUID extends EntityBase<UUID> {
     private static final long serialVersionUID = 4957231455602524793L;
 
     @Id
-    @Column(name = "id")
+    @Column(name = "id", updatable = false, nullable = false)
     private UUID id;
 
     @PrePersist

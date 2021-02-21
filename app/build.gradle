@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-    id 'org.springframework.boot' version '2.4.2'
+    id 'org.springframework.boot' version '2.5.4'
 }
 
 group = 'com.example'
@@ -10,8 +10,8 @@ version = '0.0.1-SNAPSHOT'
 description 'Main artifact'
 
 compileJava {
-    sourceCompatibility = JavaVersion.VERSION_15
-    targetCompatibility = JavaVersion.VERSION_15
+    sourceCompatibility = JavaVersion.VERSION_16
+    targetCompatibility = JavaVersion.VERSION_16
 }
 
 dependencies {
@@ -29,16 +29,9 @@ bootJar {
 }
 
 bootRun {
-    main appMainClass
+    getMainClass().set(appMainClass)
     systemProperty 'testMode', 'true'
     systemProperty 'spring.profiles.active', 'h2'
     dependsOn assemble
 }
 
-task bootRunLocalPostgres {
-    group = 'application'
-    bootRun.configure {
-        systemProperty 'spring.profiles.active', 'postgres'
-    }
-    finalizedBy bootRun
-}

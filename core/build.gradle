@@ -9,8 +9,8 @@ subprojects { subproject ->
         apply plugin: 'java-library'
         apply plugin: 'pmd'
 
-        sourceCompatibility = JavaVersion.VERSION_15
-        targetCompatibility = JavaVersion.VERSION_15
+        sourceCompatibility = JavaVersion.VERSION_16
+        targetCompatibility = JavaVersion.VERSION_16
 
         repositories {
             mavenCentral()
@@ -24,8 +24,8 @@ subprojects { subproject ->
 
         dependencies {
             // utils
-            annotationProcessor 'org.projectlombok:lombok:1.18.18'
-            compileOnly 'org.projectlombok:lombok:1.18.18'
+            annotationProcessor 'org.projectlombok:lombok:1.18.20'
+            compileOnly 'org.projectlombok:lombok:1.18.20'
         }
 
         tasks.withType(JavaCompile) {
