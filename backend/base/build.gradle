@@ -7,7 +7,7 @@ dependencies {
     runtimeOnly project(':core:core-service')
     implementation project(':backend:commons:common-rest')
 
-    // all feature modulesare included automatically
+    // all feature modules are included automatically
     implementation featureModules
 
     // Spring Framework
@@ -17,7 +17,7 @@ dependencies {
 
     // utils
     runtimeOnly 'org.codehaus.janino:janino'
-    runtimeOnly "org.liquibase:liquibase-core:${versionLiquibase}"
+    runtimeOnly 'org.liquibase:liquibase-core'
     runtimeOnly 'com.h2database:h2'
     runtimeOnly 'org.postgresql:postgresql'
 
