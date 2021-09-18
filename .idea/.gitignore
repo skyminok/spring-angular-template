@@ -7,3 +7,7 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 $PRODUCT_WORKSPACE_FILE$
+jpa-buddy.xml
+libraries-with-intellij-classes.xml
+uiDesigner.xml
+runConfigurations.xml
