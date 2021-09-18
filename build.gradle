@@ -1,7 +1,3 @@
-plugins {
-    id "com.github.spotbugs" version "4.6.1"
-}
-
 ext {
     appVersion = '0.1-SNAPSHOT'
 }
@@ -19,7 +15,8 @@ subprojects {
     }
 }
 
-allprojects {
+allprojects { it ->
+    it.setVersion("${appVersion}")
     wrapper {
         distributionUrl = 'https://services.gradle.org/distributions/gradle-7.2-all.zip'
     }

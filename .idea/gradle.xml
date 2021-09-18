@@ -22,7 +22,6 @@
             <option value="$PROJECT_DIR$/backend/db" />
             <option value="$PROJECT_DIR$/backend/features" />
             <option value="$PROJECT_DIR$/backend/features/user-lib" />
-            <option value="$PROJECT_DIR$/common-test-db" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/core-model" />
             <option value="$PROJECT_DIR$/core/core-service" />
