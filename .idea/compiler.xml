@@ -60,7 +60,7 @@
         <module name="web-project.backend.commons.model.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="16">
+    <bytecodeTargetLevel target="17">
       <module name="app" target="15" />
       <module name="web-project.app-backend.main" target="15" />
       <module name="web-project.app-backend.test" target="15" />

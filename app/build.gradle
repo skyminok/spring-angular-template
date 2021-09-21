@@ -10,8 +10,8 @@ version = '0.0.1-SNAPSHOT'
 description 'Main artifact'
 
 compileJava {
-    sourceCompatibility = JavaVersion.VERSION_16
-    targetCompatibility = JavaVersion.VERSION_16
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 dependencies {

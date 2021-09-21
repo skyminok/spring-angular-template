@@ -1,7 +1,7 @@
 plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE' apply false
     id "com.adarshr.test-logger" version "2.1.1"
-    id "com.github.spotbugs" version "4.6.1" apply false
+    id "com.github.spotbugs" version "4.7.6" apply false
 }
 
 subprojects { subproject ->
@@ -18,8 +18,8 @@ subprojects { subproject ->
         subproject.version = appVersion
 
         compileJava {
-            sourceCompatibility = JavaVersion.VERSION_16
-            targetCompatibility = JavaVersion.VERSION_16
+            sourceCompatibility = JavaVersion.VERSION_17
+            targetCompatibility = JavaVersion.VERSION_17
             options.incremental = true
         }
 
@@ -64,7 +64,7 @@ subprojects { subproject ->
         }
 
         jacoco {
-            toolVersion = "0.8.6"
+            toolVersion = "0.8.7"
             reportsDirectory = file("$buildDir/reports/jacoco")
         }
 
@@ -132,6 +132,7 @@ subprojects { subproject ->
         }
 
         spotbugs {
+            toolVersion = '4.4.1'
             showStackTraces = true
             excludeFilter.set(file("${rootProject.projectDir}/spotbugs-filter.xml"))
         }
