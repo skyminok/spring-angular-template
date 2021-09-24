@@ -24,7 +24,7 @@ subprojects { subproject ->
         }
 
         ext {
-            springBootVersion = '2.5.4'
+            springBootVersion = '2.5.5'
         }
 
         dependencyManagement {
@@ -35,15 +35,15 @@ subprojects { subproject ->
 
         dependencies {
             // utils
-            annotationProcessor 'org.projectlombok:lombok:1.18.20'
-            compileOnly 'org.projectlombok:lombok:1.18.20'
+            annotationProcessor 'org.projectlombok:lombok'
+            compileOnly 'org.projectlombok:lombok'
 
             // test
             testImplementation('org.springframework.boot:spring-boot-starter-test') {
                 exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
             }
-            testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
-            testCompileOnly 'org.projectlombok:lombok:1.18.20'
+            testAnnotationProcessor 'org.projectlombok:lombok'
+            testCompileOnly 'org.projectlombok:lombok'
 
             compileOnly "com.github.spotbugs:spotbugs-annotations:${spotbugs.toolVersion.get()}"
         }
