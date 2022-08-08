@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @PropertySource("classpath:version.properties")
 public class ApiResource {
+
     private transient final ProjectInfo projectInfo;
 
     public ApiResource(Environment env) {
@@ -32,6 +33,7 @@ public class ApiResource {
     @Getter
     @Builder
     public static class ProjectInfo {
+
         private final String version;
         private final String gitBranch;
         private final String gitHash;

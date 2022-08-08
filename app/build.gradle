@@ -1,7 +1,7 @@
 plugins {
     id 'java'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-    id 'org.springframework.boot' version '2.5.5'
+    id 'io.spring.dependency-management' version '1.0.13.RELEASE'
+    id 'org.springframework.boot' version '2.7.3'
 }
 
 group = 'com.example'
@@ -19,13 +19,18 @@ dependencies {
     implementation project(':backend:base')
 
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    runtimeOnly project(':backend:test-db')
 }
 
 def appMainClass = 'app.WebProjectApplication'
 
 bootJar {
-    mainClassName appMainClass
     archiveFileName = 'app.jar'
+}
+
+springBoot {
+    mainClass = appMainClass
 }
 
 bootRun {

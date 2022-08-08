@@ -19,9 +19,11 @@
             <option value="$PROJECT_DIR$/backend/commons/common-rest" />
             <option value="$PROJECT_DIR$/backend/commons/common-test" />
             <option value="$PROJECT_DIR$/backend/commons/model" />
+            <option value="$PROJECT_DIR$/backend/commons/service-api" />
             <option value="$PROJECT_DIR$/backend/db" />
             <option value="$PROJECT_DIR$/backend/features" />
             <option value="$PROJECT_DIR$/backend/features/user-lib" />
+            <option value="$PROJECT_DIR$/backend/test-db" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/core-model" />
             <option value="$PROJECT_DIR$/core/core-service" />

@@ -1,9 +1,37 @@
 subprojects {
+
+    configurations {
+        testResources
+    }
+
     dependencies {
         api project(':core:core-service-api')
+        implementation project(':backend:commons:service-api')
+        implementation project(':backend:commons:common-rest')
+
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+
+        // Swagger documentation
+        implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
+
+        testResources project(':backend:test-db')
     }
 
     tasks.withType(Test) {
         maxParallelForks = Runtime.runtime.availableProcessors()
     }
+
+
+    task copyTestDb(type: Copy) {
+        dependsOn configurations.testResources
+        def zipPath = project.configurations.testResources.find { it.name.startsWith('test-db') }
+        def zipFile = file(zipPath)
+        from zipTree(zipFile)
+        into "${project.buildDir}/db"
+    }
+
+    tasks.findByName('processTestResources').configure {
+        dependsOn copyTestDb
+    }
+
 }

@@ -26,6 +26,7 @@ include 'backend:base'
 // commons
 include 'backend:commons'
 include 'backend:commons:model'
+include 'backend:commons:service-api'
 include 'backend:commons:common-rest'
 include 'backend:commons:common-test'
 
@@ -35,3 +36,4 @@ include 'backend:features:user-lib'
 
 // database changelog
 include 'backend:db'
+include 'backend:test-db'

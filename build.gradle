@@ -11,6 +11,9 @@ subprojects {
     configurations.all {
         resolutionStrategy {
             failOnVersionConflict()
+            preferProjectModules()
+
+            force 'com.h2database:h2:2.1.210'
         }
     }
 }
@@ -18,6 +21,6 @@ subprojects {
 allprojects { it ->
     it.setVersion("${appVersion}")
     wrapper {
-        distributionUrl = 'https://services.gradle.org/distributions/gradle-7.2-all.zip'
+        distributionUrl = 'https://services.gradle.org/distributions/gradle-7.4.2-all.zip'
     }
 }

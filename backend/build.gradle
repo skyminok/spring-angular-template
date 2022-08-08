@@ -1,12 +1,12 @@
 plugins {
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE' apply false
-    id "com.adarshr.test-logger" version "2.1.1"
-    id "com.github.spotbugs" version "4.7.6" apply false
+    id 'io.spring.dependency-management' version '1.0.13.RELEASE' apply false
+    id "com.adarshr.test-logger" version "3.2.0"
+    id "com.github.spotbugs" version "5.0.9" apply false
 }
 
 subprojects { subproject ->
 
-    if (!(subproject.name in ['features', 'commons', 'db'])) {
+    if (!(subproject.name in ['features', 'commons', 'db', 'test-db'])) {
         apply plugin: 'java'
         apply plugin: 'io.spring.dependency-management'
         apply plugin: 'java-library'
@@ -23,9 +23,7 @@ subprojects { subproject ->
             options.incremental = true
         }
 
-        ext {
-            springBootVersion = '2.5.5'
-        }
+        ext['springBootVersion'] = '2.7.3'
 
         dependencyManagement {
             imports {
@@ -46,6 +44,7 @@ subprojects { subproject ->
             testCompileOnly 'org.projectlombok:lombok'
 
             compileOnly "com.github.spotbugs:spotbugs-annotations:${spotbugs.toolVersion.get()}"
+            spotbugs "com.github.spotbugs:spotbugs:${spotbugs.toolVersion.get()}"
         }
 
         tasks.withType(JavaCompile) {
@@ -132,9 +131,10 @@ subprojects { subproject ->
         }
 
         spotbugs {
-            toolVersion = '4.4.1'
+            toolVersion = '4.7.1'
             showStackTraces = true
             excludeFilter.set(file("${rootProject.projectDir}/spotbugs-filter.xml"))
+            reportsDir = file("$buildDir/spotbugs")
         }
 
         spotbugsMain {
