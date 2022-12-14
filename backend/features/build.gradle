@@ -30,7 +30,7 @@ subprojects {
         into "${project.buildDir}/db"
     }
 
-    tasks.findByName('processTestResources').configure {
+    tasks.findByName('test').configure {
         dependsOn copyTestDb
     }
 

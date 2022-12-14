@@ -16,6 +16,6 @@
         <appender-ref ref="CONSOLE_LOG"/>
     </root>
 
-    <logger name="ru.rsb" level="DEBUG"/>
+    <logger name="app" level="DEBUG"/>
 
 </configuration>

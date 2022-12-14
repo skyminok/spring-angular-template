@@ -1,7 +1,7 @@
 //file:noinspection GradlePackageUpdate
 plugins {
     id 'java'
-    id 'org.liquibase.gradle' version '2.1.0'
+    id 'org.liquibase.gradle' version '2.1.1'
 }
 
 dependencies {
@@ -20,7 +20,7 @@ dependencies {
 liquibase {
     activities {
         main {
-            changeLogFile 'classpath:/db-migration/changelog-master.xml'
+            changeLogFile '/db-migration/changelog-master.xml'
             url "jdbc:h2:file:${project.buildDir}/resources/main/test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE"
             driver 'org.h2.Driver'
             contexts 'main,demo'

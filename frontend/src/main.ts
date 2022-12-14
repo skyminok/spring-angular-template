@@ -14,7 +14,7 @@ const bootstrap = () => platformBrowserDynamic().bootstrapModule(AppModule);
 
 if (environment.hmr) {
     // workaround for noImplicitAny = true
-    const m = module as any;
+    const m = module as never;
     const key = 'hot';
     if (m[key]) {
         hmrBootstrap(module, bootstrap);

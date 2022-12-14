@@ -22,7 +22,7 @@ dependencies {
     runtimeOnly 'org.postgresql:postgresql'
 
     // Swagger documentation
-    implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
+    implementation 'org.springdoc:springdoc-openapi-ui:1.6.13'
 
     // devtools
     compileOnly 'org.springframework.boot:spring-boot-devtools'
@@ -33,7 +33,7 @@ dependencies {
 processResources {
     filesMatching('**version.properties') {
         expand(
-                'projectVersion': "0.1-SNAPSHOT",
+                'projectVersion': "${version}",
                 'gitHashFull': '7f0d1523-186a-488d-b5b0-ae292842eadc',
                 'gitHash': '8413701a-2933-43f6-997c-5756d9d7aba2',
                 'gitBranch': 'master',

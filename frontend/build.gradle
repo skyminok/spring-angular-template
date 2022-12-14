@@ -1,11 +1,11 @@
 plugins {
     id 'java'
-    id "com.github.node-gradle.node" version "3.3.0"
+    id "com.github.node-gradle.node" version "3.5.0"
     id 'idea'
 }
 
 node {
-    version = '16.16.0'
+    version = '18.12.1'
     download = true
 }
 
