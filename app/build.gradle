@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'io.spring.dependency-management' version '1.0.13.RELEASE'
     id 'org.springframework.boot' version "$springBootVersion"
 }
 
@@ -18,9 +17,9 @@ dependencies {
     runtimeOnly project(':frontend')
     implementation project(':backend:base')
 
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    developmentOnly "org.springframework.boot:spring-boot-devtools:$springBootVersion"
 
-    runtimeOnly project(':backend:test-db')
+//    runtimeOnly project(':backend:test-db')
 }
 
 def appMainClass = 'app.WebProjectApplication'

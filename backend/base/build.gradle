@@ -1,13 +1,13 @@
 def featureModules = rootProject.subprojects.find { p -> p.name == 'features' }.subprojects
+def commonsModules = rootProject.subprojects.find { p -> p.name == 'commons' }.subprojects
 
 dependencies {
     // project modules
     runtimeOnly project(':backend:db')
-    implementation project(':backend:commons:model')
     runtimeOnly project(':core:core-service')
-    implementation project(':backend:commons:common-rest')
 
-    // all feature modules are included automatically
+    // all commons and feature modules are included automatically
+    implementation commonsModules
     implementation featureModules
 
     // Spring Framework
@@ -22,7 +22,7 @@ dependencies {
     runtimeOnly 'org.postgresql:postgresql'
 
     // Swagger documentation
-    implementation 'org.springdoc:springdoc-openapi-ui:1.6.13'
+    implementation 'org.springdoc:springdoc-openapi-ui:1.6.15'
 
     // devtools
     compileOnly 'org.springframework.boot:spring-boot-devtools'

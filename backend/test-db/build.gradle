@@ -1,17 +1,17 @@
 //file:noinspection GradlePackageUpdate
 plugins {
     id 'java'
-    id 'org.liquibase.gradle' version '2.1.1'
+    id 'org.liquibase.gradle' version "$liquibaseGradlePlugin"
 }
 
 dependencies {
+    liquibaseRuntime platform("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
 
-    // версия Liquibase >=4.4.0 некорректно игнорирует параметр outputFile + сейчас в текущей версии
-    // Spring Boot используется именно такая версия
-    liquibaseRuntime 'org.liquibase:liquibase-core:4.3.+'
-    liquibaseRuntime 'javax.xml.bind:jaxb-api:2.3.1'
-    liquibaseRuntime 'org.slf4j:slf4j-api:1.7.25'
-    liquibaseRuntime 'org.yaml:snakeyaml:1.29'
+    liquibaseRuntime "org.liquibase:liquibase-core"
+    liquibaseRuntime 'javax.xml.bind:jaxb-api'
+    liquibaseRuntime 'org.slf4j:slf4j-api'
+    liquibaseRuntime 'org.yaml:snakeyaml'
+    liquibaseRuntime 'info.picocli:picocli:4.7.1'
 
     liquibaseRuntime 'com.h2database:h2'
     liquibaseRuntime project(':backend:db')
@@ -25,7 +25,7 @@ liquibase {
             driver 'org.h2.Driver'
             contexts 'main,demo'
             username 'sa'
-            password ''
+            password '1'
             logLevel 'info'
         }
     }
