@@ -5,27 +5,36 @@ plugins {
 subprojects { subproject ->
     if (!(subproject.name in ['core', 'features', 'commons'])) {
         apply plugin: 'java'
-        apply plugin: 'io.spring.dependency-management'
         apply plugin: 'java-library'
         apply plugin: 'pmd'
-
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
 
         repositories {
             mavenCentral()
         }
 
+        configurations {
+            app
+            implementation.extendsFrom(app)
+            runtimeOnly.extendsFrom(app)
+            compileClasspath.extendsFrom(app)
+            annotationProcessor.extendsFrom(app)
+            testAnnotationProcessor.extendsFrom(app)
+            api.extendsFrom(app)
+        }
+
         configurations.all {
             resolutionStrategy {
                 failOnVersionConflict()
+                preferProjectModules()
             }
         }
 
         dependencies {
+            app platform("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
+
             // utils
-            annotationProcessor 'org.projectlombok:lombok:1.18.20'
-            compileOnly 'org.projectlombok:lombok:1.18.20'
+            annotationProcessor 'org.projectlombok:lombok'
+            compileOnly 'org.projectlombok:lombok'
         }
 
         tasks.withType(JavaCompile) {

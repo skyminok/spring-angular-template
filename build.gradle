@@ -8,9 +8,6 @@ subprojects {
         resolutionStrategy {
             failOnVersionConflict()
             preferProjectModules()
-
-            force 'com.h2database:h2:2.1.210'
-            force "org.liquibase:liquibase-core:${liquibaseVersion}"
         }
     }
 }
