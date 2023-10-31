@@ -74,17 +74,18 @@
         </else>
     </if>
 
-    <root level="DEBUG">
-        <if condition='!"true".equals(p("testMode"))'>
-            <then>
+    <if condition='!"true".equals(p("testMode"))'>
+        <then>
+            <root level="DEBUG">
                 <appender-ref ref="FILE_LOG"/>
                 <appender-ref ref="ERROR_FILE_LOG"/>
-            </then>
-            <else>
+            </root>
+        </then>
+        <else>
+            <root level="DEBUG">
                 <appender-ref ref="CONSOLE_LOG"/>
-            </else>
-        </if>
-    </root>
-
+            </root>
+        </else>
+    </if>
 
 </configuration>
