@@ -156,5 +156,9 @@ subprojects { subproject ->
         pmdTest {
             group = 'verification'
         }
+
+        clean {
+            delete "${project.layout.buildDirectory.asFile.get()}/out"
+        }
     }
 }

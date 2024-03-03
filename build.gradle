@@ -13,8 +13,17 @@ subprojects {
 }
 
 allprojects { it ->
+    apply plugin: 'idea'
+
     it.setVersion("${rootProject.version}")
     wrapper {
         distributionUrl = 'https://services.gradle.org/distributions/gradle-8.6-all.zip'
+    }
+
+    idea {
+        module {
+            outputDir file('build/classes/main')
+            testOutputDir file('build/classes/test')
+        }
     }
 }
