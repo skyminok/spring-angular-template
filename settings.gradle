@@ -36,4 +36,4 @@ include 'backend:features:user-lib'
 
 // database changelog
 include 'backend:db'
-//include 'backend:test-db'
+include 'backend:test-db'

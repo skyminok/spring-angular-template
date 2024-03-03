@@ -62,7 +62,8 @@
                             "outputHashing": "all",
                             "sourceMap": false,
                             "vendorChunk": true,
-                            "buildOptimizer": true
+                            "buildOptimizer": true,
+                            "extractLicenses": false
                         },
                         "development": {
                             "fileReplacements": [
@@ -100,10 +101,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "browserTarget": "ng-template:build:production"
+                            "buildTarget": "ng-template:build:production"
                         },
                         "hmr": {
-                            "browserTarget": "ng-template:build:hmr",
+                            "buildTarget": "ng-template:build:hmr",
                             "hmr": true
                         }
                     },
@@ -112,7 +113,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "ng-template:build"
+                        "buildTarget": "ng-template:build"
                     }
                 },
                 "test": {
@@ -146,7 +147,6 @@
             }
         }
     },
-    "defaultProject": "ng-template",
     "cli": {
         "analytics": false
     }

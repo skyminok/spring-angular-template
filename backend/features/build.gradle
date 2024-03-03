@@ -1,8 +1,8 @@
 subprojects {
 
-//    configurations {
-//        testResources
-//    }
+    configurations {
+        testResources
+    }
 
     dependencies {
         api project(':core:core-service-api')
@@ -14,7 +14,7 @@ subprojects {
         // Swagger documentation
         implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
 
-//        testResources project(':backend:test-db')
+        testResources project(':backend:test-db')
     }
 
     tasks.withType(Test) {
@@ -22,16 +22,16 @@ subprojects {
     }
 
 
-//    task copyTestDb(type: Copy) {
-//        dependsOn configurations.testResources
-//        def zipPath = project.configurations.testResources.find { it.name.startsWith('test-db') }
-//        def zipFile = file(zipPath)
-//        from zipTree(zipFile)
-//        into "${project.buildDir}/db"
-//    }
-//
-//    tasks.findByName('test').configure {
-//        dependsOn copyTestDb
-//    }
+    task copyTestDb(type: Copy) {
+        dependsOn configurations.testResources
+        def zipPath = project.configurations.testResources.find { it.name.startsWith('test-db') }
+        def zipFile = file(zipPath)
+        from zipTree(zipFile)
+        into "${project.layout.buildDirectory.asFile.get()}/db"
+    }
+
+    tasks.findByName('test').configure {
+        dependsOn copyTestDb
+    }
 
 }

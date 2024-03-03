@@ -15,6 +15,6 @@ subprojects {
 allprojects { it ->
     it.setVersion("${rootProject.version}")
     wrapper {
-        distributionUrl = 'https://services.gradle.org/distributions/gradle-8.3-all.zip'
+        distributionUrl = 'https://services.gradle.org/distributions/gradle-8.6-all.zip'
     }
 }

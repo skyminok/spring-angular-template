@@ -1,6 +1,6 @@
 plugins {
-    id "com.adarshr.test-logger" version "3.2.0"
-    id "com.github.spotbugs" version "5.0.13" apply false
+    id "com.adarshr.test-logger" version "4.0.0"
+    id "com.github.spotbugs" version "6.0.8" apply false
 }
 
 subprojects { subproject ->
@@ -24,8 +24,8 @@ subprojects { subproject ->
         }
 
         compileJava {
-            sourceCompatibility = JavaVersion.VERSION_17
-            targetCompatibility = JavaVersion.VERSION_17
+            sourceCompatibility = JavaVersion.VERSION_21
+            targetCompatibility = JavaVersion.VERSION_21
             options.incremental = true
             options.compilerArgs << '-parameters'
         }
@@ -43,6 +43,8 @@ subprojects { subproject ->
             }
             testAnnotationProcessor 'org.projectlombok:lombok'
             testCompileOnly 'org.projectlombok:lombok'
+            testImplementation 'org.junit.jupiter:junit-jupiter'
+            testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
             compileOnly "com.github.spotbugs:spotbugs-annotations:${spotbugs.toolVersion.get()}"
             spotbugs "com.github.spotbugs:spotbugs:${spotbugs.toolVersion.get()}"
@@ -65,8 +67,8 @@ subprojects { subproject ->
         }
 
         jacoco {
-            toolVersion = "0.8.8"
-            reportsDirectory = file("$buildDir/reports/jacoco")
+            toolVersion = "0.8.11"
+            reportsDirectory = file("${project.layout.buildDirectory.asFile.get()}/reports/jacoco")
         }
 
         jacocoTestReport {
@@ -135,8 +137,8 @@ subprojects { subproject ->
         spotbugs {
             toolVersion = '4.7.3'
             showStackTraces = true
-            excludeFilter.set(file("${rootProject.projectDir}/spotbugs-filter.xml"))
-            reportsDir = file("$buildDir/spotbugs")
+            excludeFilter.set(file("${rootProject.layout.projectDirectory.asFile}/spotbugs-filter.xml"))
+            reportsDir = file("${project.layout.buildDirectory.asFile.get()}/spotbugs")
         }
 
         spotbugsMain {

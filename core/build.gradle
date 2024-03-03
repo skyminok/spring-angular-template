@@ -51,5 +51,9 @@ subprojects { subproject ->
             maxHeapSize = '1024m'
             minHeapSize = '1024m'
         }
+
+        clean {
+            delete "${projectDir}/out"
+        }
     }
 }

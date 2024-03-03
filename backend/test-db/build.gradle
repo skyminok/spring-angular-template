@@ -21,7 +21,7 @@ liquibase {
     activities {
         main {
             changeLogFile '/db-migration/changelog-master.xml'
-            url "jdbc:h2:file:${project.buildDir}/resources/main/test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE"
+            url "jdbc:h2:file:/home/sergius/work/spring-angular-template/backend/test-db/build/resources/main/test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE"
             driver 'org.h2.Driver'
             contexts 'main,demo'
             username 'sa'
