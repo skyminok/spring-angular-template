@@ -1,5 +1,9 @@
 <configuration debug="false">
-    <if condition='isDefined("serverName")'>
+
+    <condition class="ch.qos.logback.core.boolex.ExpressionPropertyCondition">
+        <expression>isDefined("serverName")</expression>
+    </condition>
+    <if>
         <then>
             <contextName>${serverName}</contextName>
         </then>
@@ -8,7 +12,10 @@
         </else>
     </if>
 
-    <if condition='isDefined("logDir") &amp;&amp; property("logDir") != null'>
+    <condition class="ch.qos.logback.core.boolex.IsPropertyDefinedCondition">
+        <key>logDir</key>
+    </condition>
+    <if>
         <then>
             <property name="PATH_LOG" value="${logDir}"/>
         </then>
@@ -28,7 +35,11 @@
               value="%gray([%date{HH:mm:ss.SSS}]) %highlight(%-5level) %cyan(%-55.55logger{54}) [%8.8thread] %magenta(%X{requestId}) - %msg"/>
 
 
-    <if condition='!"true".equals(p("testMode"))'>
+    <condition class="ch.qos.logback.core.boolex.PropertyEqualityCondition">
+        <key>testMode</key>
+        <value>false</value>
+    </condition>
+    <if>
         <then>
             <appender name="FILE_LOG"
                       class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -74,7 +85,11 @@
         </else>
     </if>
 
-    <if condition='!"true".equals(p("testMode"))'>
+    <condition class="ch.qos.logback.core.boolex.PropertyEqualityCondition">
+        <key>testMode</key>
+        <value>false</value>
+    </condition>
+    <if>
         <then>
             <root level="DEBUG">
                 <appender-ref ref="FILE_LOG"/>

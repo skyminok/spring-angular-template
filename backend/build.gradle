@@ -1,6 +1,6 @@
 plugins {
     id "com.adarshr.test-logger" version "4.0.0"
-    id "com.github.spotbugs" version "6.0.8" apply false
+    id "com.github.spotbugs" version "6.5.12" apply false
 }
 
 subprojects { subproject ->
@@ -14,7 +14,9 @@ subprojects { subproject ->
         apply plugin: 'com.github.spotbugs'
 
         configurations {
-            app
+            app {
+                visible = false
+            }
             implementation.extendsFrom(app)
             runtimeOnly.extendsFrom(app)
             compileClasspath.extendsFrom(app)
@@ -41,6 +43,8 @@ subprojects { subproject ->
             testImplementation('org.springframework.boot:spring-boot-starter-test') {
                 exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
             }
+            testImplementation('org.springframework.boot:spring-boot-webmvc-test')
+
             testAnnotationProcessor 'org.projectlombok:lombok'
             testCompileOnly 'org.projectlombok:lombok'
             testImplementation 'org.junit.jupiter:junit-jupiter'
@@ -89,49 +93,49 @@ subprojects { subproject ->
 
         testlogger {
             // pick a theme - mocha, standard, plain, mocha-parallel, standard-parallel or plain-parallel
-            theme 'mocha'
+            theme = 'mocha'
 
             // set to false to disable detailed failure logs
-            showExceptions true
+            showExceptions = true
 
             // set to false to hide stack traces
-            showStackTraces true
+            showStackTraces = true
 
             // set to true to remove any filtering applied to stack traces
-            showFullStackTraces false
+            showFullStackTraces = false
 
             // set to false to hide exception causes
-            showCauses true
+            showCauses = true
 
             // set threshold in milliseconds to highlight slow tests
-            slowThreshold 2000
+            slowThreshold = 2000
 
             // displays a breakdown of passes, failures and skips along with total duration
-            showSummary true
+            showSummary = true
 
             // set to true to see simple class names
-            showSimpleNames false
+            showSimpleNames = false
 
             // set to false to hide passed tests
-            showPassed true
+            showPassed = true
 
             // set to false to hide skipped tests
-            showSkipped true
+            showSkipped = true
 
             // set to false to hide failed tests
-            showFailed true
+            showFailed = true
 
             // enable to see standard out and error streams inline with the test results
-            showStandardStreams false
+            showStandardStreams = false
 
             // set to false to hide passed standard out and error streams
-            showPassedStandardStreams true
+            showPassedStandardStreams = true
 
             // set to false to hide skipped standard out and error streams
-            showSkippedStandardStreams true
+            showSkippedStandardStreams = true
 
             // set to false to hide failed standard out and error streams
-            showFailedStandardStreams true
+            showFailedStandardStreams = true
         }
 
         spotbugs {

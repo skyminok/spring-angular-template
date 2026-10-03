@@ -14,7 +14,7 @@ subprojects {
         // Swagger documentation
         implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
 
-        testResources project(':backend:test-db')
+//        testResources project(':backend:test-db')
     }
 
     tasks.withType(Test) {
@@ -22,6 +22,7 @@ subprojects {
     }
 
 
+/*
     task copyTestDb(type: Copy) {
         dependsOn configurations.testResources
         def zipPath = project.configurations.testResources.find { it.name.startsWith('test-db') }
@@ -33,5 +34,6 @@ subprojects {
     tasks.findByName('test').configure {
         dependsOn copyTestDb
     }
+*/
 
 }

@@ -1,5 +1,3 @@
-// noinspection JSUnusedGlobalSymbols
 export const environment = {
-    production: false,
-    hmr: false
+    production: false
 };

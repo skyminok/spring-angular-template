@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GigaCodeAgentSettings">
+    <option name="autoApproveEdits" value="true" />
+    <option name="autoApprovedCommands">
+      <list>
+        <Execute>
+          <option name="pattern" value="curl -s -L &quot;https://www.baeldung.com/java-logback-conditional-logging&quot; 2&gt;/dev/null" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="powershell -Command &quot;Invoke-WebRequest -Uri 'https://www.baeldung.com/java-logback-conditional-logging' -UseBasicParsing | Select-Object -ExpandProperty Content&quot; 2&gt;&amp;1" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="curl -s -L -A &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36&quot; &quot;https://www.baeldung.com/java-logback-conditional-logging&quot; 2&gt;/dev/null" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="powershell -NoProfile -Command &quot;$response = Invoke-WebRequest -Uri 'https://www.baeldung.com/java-logback-conditional-logging' -Headers @{'User-Agent'='Mozilla/5.0'} -UseBasicParsing; $response.Content.Length&quot;" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="curl --version 2&gt;&amp;1" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="cmd /c &quot;curl -s -L -A \&quot;Mozilla/5.0\&quot; \&quot;https://www.baeldung.com/java-logback-conditional-logging\&quot; &gt; C:\temp\baeldung.html 2&gt;nul &amp;&amp; type C:\temp\baeldung.html&quot;" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="curl.exe -s -L -A &quot;Mozilla/5.0&quot; &quot;https://webcache.googleusercontent.com/search?q=cache:www.baeldung.com/java-logback-conditional-logging&quot; 2&gt;&amp;1" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="curl.exe -s -L -A &quot;Mozilla/5.0&quot; &quot;https://web.archive.org/web/2024/https://www.baeldung.com/java-logback-conditional-logging&quot; 2&gt;&amp;1" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Out-File -FilePath &quot;C:\temp\baeldung_archive.html&quot; -Encoding UTF8" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Select-String -Path &quot;C:\temp\baeldung_archive.html&quot; -Pattern &quot;if|else|condition|logback&quot; -SimpleMatch" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Select-String -Path &quot;C:\temp\baeldung_archive.html&quot; -Pattern &quot;logback.xml|&lt;if&gt;|&lt;else&gt;|&lt;condition&gt;|&lt;springProperty&gt;&quot;" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Select-String -Path &quot;C:\temp\baeldung_archive.html&quot; -Pattern &quot;class=\&quot;.*snippet|class=\&quot;.*code|&lt;pre|&lt;code|logback&quot;" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Select-String -Path &quot;C:\temp\baeldung_archive.html&quot; -Pattern &quot;snippet&quot;" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="cd *" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="npm view *" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="tail *" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="npm install *" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Remove-Item -Recurse -Force node_modules,package-lock.json -ErrorAction SilentlyContinue" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Select-String '&quot;6\.'" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Select-String '&quot;22\.'" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Select-Object -Last 10" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Select-String '&quot;20\.'" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Select-String '&quot;21\.'" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Test-Path &quot;C:\work\templates\spring-angular-template\frontend\.gradle\nodejs\node-v24.21.0-win-x64\node.exe&quot;" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="&quot;C:\work\templates\spring-angular-template\frontend\.gradle\nodejs\node-v24.21.0-win-x64\node.exe&quot; &quot;C:\work\templates\spring-angular-template\frontend\.gradle\nodejs\node-v24.21.0-win-x64\node_modules\npm\bin\npm-cli.js&quot; install 2&gt;&amp;1" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Set-Location &quot;C:\work\templates\spring-angular-template\frontend&quot;" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="&quot;C:\work\templates\spring-angular-template\frontend\.gradle\nodejs\node-v24.21.0-win-x64\node.exe&quot; &quot;C:\work\templates\spring-angular-template\frontend\.gradle\nodejs\node-v24.21.0-win-x64\node_modules\npm\bin\npm-cli.js&quot; exec -- ng update @angular/core@22 @angular/cli@22 --allow-dirty --force 2&gt;&amp;1" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="&quot;C:\work\templates\spring-angular-template\frontend\.gradle\nodejs\node-v24.21.0-win-x64\node.exe&quot; &quot;C:\work\templates\spring-angular-template\frontend\.gradle\nodejs\node-v24.21.0-win-x64\node_modules\npm\bin\npm-cli.js&quot; exec -- ng update @angular/core@22 @angular/cli@22 --allow-dirty --force --dry-run 2&gt;&amp;1" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Remove-Item &quot;C:\work\templates\spring-angular-template\frontend\src\app\app.module.ts&quot; -Force" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="&quot;C:\work\templates\spring-angular-template\frontend\.gradle\nodejs\node-v24.21.0-win-x64\node.exe&quot; &quot;C:\work\templates\spring-angular-template\frontend\.gradle\nodejs\node-v24.21.0-win-x64\node_modules\npm\bin\npm-cli.js&quot; run build 2&gt;&amp;1" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Get-Content package-lock.json" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Select-String '&quot;node_modules/zone.js&quot;' -Context 0,5 2&gt;&amp;1" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Select-String 'zone.js'" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Get-Content node_modules\zone.js\package.json" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Test-Path node_modules\zone.js" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Get-Content node_modules\@angular\core\package.json" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Test-Path node_modules\@angular\core\primitives" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Get-ChildItem node_modules\@angular\core -Directory" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Get-ChildItem node_modules\@angular\core\types -File" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Select-String '&quot;exports&quot;' -Context 0,50" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="&quot;C:\work\templates\spring-angular-template\frontend\.gradle\nodejs\node-v24.21.0-win-x64\node.exe&quot; &quot;C:\work\templates\spring-angular-template\frontend\.gradle\nodejs\node-v24.21.0-win-x64\node_modules\npm\bin\npm-cli.js&quot; run lint 2&gt;&amp;1" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Remove-Item &quot;C:\work\templates\spring-angular-template\frontend\.eslintrc.json&quot; -Force" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="npm ls *" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Select-String '&quot;.&quot;' -Context 0,3" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Test-Path node_modules\typescript-eslint" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Get-Content node_modules\@angular-eslint\eslint-plugin-template\package.json" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Get-ChildItem node_modules\@angular-eslint\eslint-plugin-template -File" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Test-Path node_modules\@angular-eslint\eslint-plugin-template\dist" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Get-Content node_modules\@angular-eslint\eslint-plugin-template\dist\index.js" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Get-Content node_modules\@angular-eslint\eslint-plugin\dist\index.js" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Select-String 'module.exports' -Context 0,20" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="&quot;C:\work\templates\spring-angular-template\frontend\.gradle\nodejs\node-v24.21.0-win-x64\node.exe&quot; &quot;C:\work\templates\spring-angular-template\frontend\.gradle\nodejs\nnode-v24.21.0-win-x64\node_modules\npm\bin\npm-cli.js&quot; run lint 2&gt;&amp;1" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="&quot;C:\work\templates\spring-angular-template\frontend\.gradle\nodejs\node-v24.21.0-win-x64\node.exe&quot; &quot;C:\work\templates\spring-angular-template\frontend\.gradle\nodejs\node-v24.21.0-win-x64\node_modules\npm\bin\npm-cli.js&quot; run test 2&gt;&amp;1" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Remove-Item -Recurse -Force .angular,node_modules\.cache -ErrorAction SilentlyContinue" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="&quot;C:\work\templates\spring-angular-template\frontend\.gradle\nodejs\node-v24.21.0-win-x64\node.exe&quot; &quot;C:\work\templates\spring-angular-template\frontend\.gradle\nodejs\node-v24.21.0-win-x64\node_modules\npm\bin\npm-cli.js&quot; run buildDev 2&gt;&amp;1" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value=".\gradlew --console=plain :backend:base:dependencies --configuration runtimeClasspath 2&gt;&amp;1" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value=".\gradlew --console=plain :backend:base:dependencies 2&gt;&amp;1" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value="Select-String -Pattern 'WARN|deprecated|error' -CaseSensitive:$false" />
+        </Execute>
+        <Execute>
+          <option name="pattern" value=".gradlew build *" />
+        </Execute>
+      </list>
+    </option>
+    <option name="autoApprovedReads">
+      <list>
+        <Read>
+          <option name="pattern" value="$PROJECT_DIR$/../../../temp/baeldung_archive.html" />
+        </Read>
+      </list>
+    </option>
+  </component>
+</project>

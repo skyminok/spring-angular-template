@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/backend/base/web-project.backend.base.main.iml" filepath="$PROJECT_DIR$/.idea/modules/backend/base/web-project.backend.base.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/backend/base/web-project.backend.base.test.iml" filepath="$PROJECT_DIR$/.idea/modules/backend/base/web-project.backend.base.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/backend/commons/common-rest/web-project.backend.commons.common-rest.main.iml" filepath="$PROJECT_DIR$/.idea/modules/backend/commons/common-rest/web-project.backend.commons.common-rest.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/backend/commons/model/web-project.backend.commons.model.main.iml" filepath="$PROJECT_DIR$/.idea/modules/backend/commons/model/web-project.backend.commons.model.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/backend/commons/model/web-project.backend.commons.model.test.iml" filepath="$PROJECT_DIR$/.idea/modules/backend/commons/model/web-project.backend.commons.model.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/backend/features/user-lib/web-project.backend.features.user-lib.main.iml" filepath="$PROJECT_DIR$/.idea/modules/backend/features/user-lib/web-project.backend.features.user-lib.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core-model/web-project.core.core-model.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core-model/web-project.core.core-model.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core-service-api/web-project.core.core-service-api.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core-service-api/web-project.core.core-service-api.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/core-service/web-project.core.core-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/core-service/web-project.core.core-service.main.iml" />
+    </modules>
+  </component>
+</project>

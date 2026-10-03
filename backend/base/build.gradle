@@ -6,9 +6,12 @@ dependencies {
     runtimeOnly project(':backend:db')
     runtimeOnly project(':core:core-service')
 
-    // all commons and feature modules are included automatically
-    implementation commonsModules
-    implementation featureModules
+    // commons and feature modules
+    implementation project(':backend:commons:model')
+    implementation project(':backend:commons:service-api')
+    implementation project(':backend:commons:common-rest')
+    implementation project(':backend:commons:common-test')
+    implementation project(':backend:features:user-lib')
 
     // Spring Framework
     implementation 'org.springframework.boot:spring-boot-starter-web'
